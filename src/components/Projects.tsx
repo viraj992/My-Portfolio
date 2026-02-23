@@ -1,6 +1,7 @@
 import { Github, ExternalLink } from 'lucide-react';
 import SectionHeading from './SectionHeading';
 import { useInView } from './useInView';
+import cosmeticsImg from '../images/cosmetics.png';
 
 interface Project {
   title: string;
@@ -8,18 +9,18 @@ interface Project {
   tech: string[];
   github: string;
   demo: string;
-  gradient: string;
+  image: string; // New property for project image
 }
 
 const projects: Project[] = [
   {
-    title: 'Quotation Generation System',
+    title: 'Beauty Cosmetics - Ecommerce website',
     description:
       'A full-featured quotation management system enabling users to create, manage, and track quotations. Built with a robust backend API and responsive React frontend for seamless user experience.',
-    tech: ['React.js', 'Express.js', 'MySQL', 'REST API', 'Node.js'],
-    github: '#',
+    tech: ['React.js', 'Express.js', 'MongoDb', 'REST API', 'Node.js', 'TailwindCSS'],
+    github: 'https://github.com/viraj992/Beauty-Cosmetics.git',
     demo: '#',
-    gradient: 'from-blue-500 to-indigo-600',
+    image: cosmeticsImg,
   },
   {
     title: 'Admin Dashboard System',
@@ -28,7 +29,7 @@ const projects: Project[] = [
     tech: ['React.js', 'Node.js', 'Express.js', 'MySQL', 'Tailwind CSS'],
     github: '#',
     demo: '#',
-    gradient: 'from-emerald-500 to-teal-600',
+    image: '/images/admin-dashboard.png',
   },
   {
     title: 'Portfolio Website',
@@ -37,7 +38,7 @@ const projects: Project[] = [
     tech: ['React.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
     github: '#',
     demo: '#',
-    gradient: 'from-purple-500 to-pink-600',
+    image: '/images/portfolio-website.png',
   },
 ];
 
@@ -61,18 +62,33 @@ export default function Projects() {
               }`}
               style={{ animationDelay: `${idx * 0.15}s` }}
             >
-              {/* Gradient header */}
-              <div
-                className={`h-48 bg-gradient-to-br ${project.gradient} relative flex items-center justify-center overflow-hidden`}
-              >
-                <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-all duration-300" />
-                <div className="relative text-white text-center px-6">
-                  <div className="text-4xl mb-2 opacity-80">{'</>'}</div>
-                  <p className="text-sm font-medium opacity-90">{project.tech[0]}</p>
+              {/* Image header with hover overlay */}
+              <div className="relative h-48 overflow-hidden rounded-t-lg group">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                />
+
+                {/* Overlay buttons on hover */}
+                <div className="absolute inset-0 bg-black/50 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-4 py-2 bg-gray-100 text-gray-800 rounded-lg flex items-center gap-2"
+                  >
+                    <Github className="w-4 h-4" /> GitHub
+                  </a>
+                  <a
+                    href={project.demo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-4 py-2 bg-primary-600 text-white rounded-lg flex items-center gap-2"
+                  >
+                    <ExternalLink className="w-4 h-4" /> Live Demo
+                  </a>
                 </div>
-                {/* Decorative circles */}
-                <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-white/10 rounded-full" />
-                <div className="absolute -top-4 -left-4 w-16 h-16 bg-white/10 rounded-full" />
               </div>
 
               {/* Content */}
@@ -94,28 +110,6 @@ export default function Projects() {
                       {t}
                     </span>
                   ))}
-                </div>
-
-                {/* Action buttons */}
-                <div className="flex gap-3">
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 bg-gray-100 dark:bg-slate-800 hover:bg-gray-200 dark:hover:bg-slate-700 rounded-lg transition-all"
-                  >
-                    <Github className="w-4 h-4" />
-                    GitHub
-                  </a>
-                  <a
-                    href={project.demo}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-white bg-primary-600 hover:bg-primary-700 rounded-lg transition-all"
-                  >
-                    <ExternalLink className="w-4 h-4" />
-                    Live Demo
-                  </a>
                 </div>
               </div>
             </div>

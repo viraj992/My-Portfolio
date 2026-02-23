@@ -70,10 +70,8 @@ export default function Footer() {
           {/* Copyright */}
           <div className="flex flex-col sm:flex-row items-center gap-2 text-sm text-gray-500">
             <span>© {new Date().getFullYear()} Full Stack Developer. All rights reserved.</span>
-            <span className="hidden sm:inline">•</span>
-            <span className="flex items-center gap-1">
-              Built with <Heart className="w-3 h-3 text-red-500 fill-current" /> using React & Tailwind
-            </span>
+            
+            
           </div>
         </div>
       </div>

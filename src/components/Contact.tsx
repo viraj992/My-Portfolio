@@ -7,25 +7,25 @@ const contactInfo = [
   {
     icon: Mail,
     label: 'Email',
-    value: 'developer@example.com',
+    value: 'virajekanayake479@gmail.com',
     href: 'mailto:developer@example.com',
   },
   {
     icon: Linkedin,
     label: 'LinkedIn',
-    value: 'linkedin.com/in/developer',
+    value: 'linkedin.com/in/viraj-ekanayake',
     href: 'https://linkedin.com/in/',
   },
   {
     icon: Github,
     label: 'GitHub',
-    value: 'github.com/developer',
+    value: 'github.com/viraj992',
     href: 'https://github.com/',
   },
   {
     icon: MapPin,
     label: 'Location',
-    value: 'Available Remote / On-site',
+    value: 'Balangoda, Sri Lanka',
     href: '#',
   },
 ];
