@@ -2,6 +2,7 @@ import { Github, ExternalLink } from 'lucide-react';
 import SectionHeading from './SectionHeading';
 import { useInView } from './useInView';
 import cosmeticsImg from '../images/cosmetics.png';
+import IconCoreImg from '../images/iconCore.png';
 
 interface Project {
   title: string;
@@ -16,20 +17,20 @@ const projects: Project[] = [
   {
     title: 'Beauty Cosmetics - Ecommerce website',
     description:
-      'A full-featured quotation management system enabling users to create, manage, and track quotations. Built with a robust backend API and responsive React frontend for seamless user experience.',
+      'Beauty Cosmetics is a full-stack MERN e-commerce web application for cosmetic products with authentication, role-based authorization, cart management, order processing, and admin-controlled review moderation. The platform features responsive and animated UI built with Tailwind CSS, product search, pagination for large datasets, and secure order status management.',
     tech: ['React.js', 'Express.js', 'MongoDb', 'REST API', 'Node.js', 'TailwindCSS'],
     github: 'https://github.com/viraj992/Beauty-Cosmetics.git',
-    demo: '#',
+    demo: 'https://beauty-cosmetics-ecommerce.vercel.app/',
     image: cosmeticsImg,
   },
   {
-    title: 'Admin Dashboard System',
+    title: 'Icon-Core - Gym Website',
     description:
-      'An intuitive admin dashboard with real-time data visualization, user management, role-based access control, and comprehensive analytics. Designed for efficient business operations.',
-    tech: ['React.js', 'Node.js', 'Express.js', 'MySQL', 'Tailwind CSS'],
-    github: '#',
-    demo: '#',
-    image: '/images/admin-dashboard.png',
+      'A fully responsive gym/fitness website built with React and TypeScript, featuring categorized programs, trainer profiles, pricing packages, a filterable schedule, a BMI calculator, reusable components, smooth animations, and a polished, modern UI.',
+    tech: ['React.js','TypeScript' ,'Tailwind CSS', 'FramerMotion', 'Lucide React', 'Zustand', ],
+    github: 'https://github.com/viraj992/Iron-core-GYM-WEB.git',
+    demo: 'https://icon-core.netlify.app/',
+    image: IconCoreImg,
   },
   {
     title: 'Portfolio Website',
