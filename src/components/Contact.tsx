@@ -2,25 +2,26 @@ import { useState } from 'react';
 import { Mail, Linkedin, Github, Send, MapPin } from 'lucide-react';
 import SectionHeading from './SectionHeading';
 import { useInView } from './useInView';
+import emailjs from '@emailjs/browser';
 
 const contactInfo = [
   {
     icon: Mail,
     label: 'Email',
     value: 'virajekanayake479@gmail.com',
-    href: 'mailto:developer@example.com',
+    href: 'mailto:virajekanayake479@gmail.com',
   },
   {
     icon: Linkedin,
     label: 'LinkedIn',
     value: 'linkedin.com/in/viraj-ekanayake',
-    href: 'https://linkedin.com/in/',
+    href: 'https://linkedin.com/in/viraj-ekanayake',
   },
   {
     icon: Github,
     label: 'GitHub',
     value: 'github.com/viraj992',
-    href: 'https://github.com/',
+    href: 'https://github.com/viraj992',
   },
   {
     icon: MapPin,
@@ -39,13 +40,33 @@ export default function Contact() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setSubmitted(true);
-      setFormData({ name: '', email: '', subject: '', message: '' });
-      setTimeout(() => setSubmitted(false), 3000);
-    }, 1000);
+
+    emailjs
+      .send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+        },
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      )
+      .then(
+        (response) => {
+          console.log('SUCCESS!', response.status, response.text);
+          setIsSubmitting(false);
+          setSubmitted(true);
+          setFormData({ name: '', email: '', subject: '', message: '' });
+          setTimeout(() => setSubmitted(false), 3000);
+        },
+        (error) => {
+          console.error('FAILED...', error);
+          setIsSubmitting(false);
+          alert('Failed to send message. Please try again later.');
+        }
+      );
   };
 
   return (
@@ -58,16 +79,13 @@ export default function Contact() {
 
         <div ref={ref} className="grid lg:grid-cols-5 gap-8 lg:gap-12">
           {/* Contact info */}
-          <div
-            className={`lg:col-span-2 space-y-6 ${isInView ? 'animate-slide-in-left' : 'opacity-0'}`}
-          >
+          <div className={`lg:col-span-2 space-y-6 ${isInView ? 'animate-slide-in-left' : 'opacity-0'}`}>
             <div>
               <h3 className="font-display text-2xl font-semibold text-gray-900 dark:text-white mb-2">
                 Let's work together
               </h3>
               <p className="text-gray-500 dark:text-gray-400 leading-relaxed">
-                I'm currently open to new opportunities and always excited to discuss
-                interesting projects and ideas.
+                I'm currently open to new opportunities and always excited to discuss interesting projects and ideas.
               </p>
             </div>
 
@@ -97,9 +115,7 @@ export default function Contact() {
           </div>
 
           {/* Contact form */}
-          <div
-            className={`lg:col-span-3 ${isInView ? 'animate-slide-in-right' : 'opacity-0'}`}
-          >
+          <div className={`lg:col-span-3 ${isInView ? 'animate-slide-in-right' : 'opacity-0'}`}>
             <form onSubmit={handleSubmit} className="card p-8 space-y-5">
               <div className="grid sm:grid-cols-2 gap-5">
                 <div>
