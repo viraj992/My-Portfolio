@@ -1,9 +1,11 @@
 import { useState, useEffect, useCallback } from 'react';
-import { ArrowDown, ExternalLink, Mail } from 'lucide-react';
+import { ExternalLink } from 'lucide-react';
+import { FaReact } from 'react-icons/fa';
+import { SiFlutter } from 'react-icons/si';
 import { useInView } from './useInView';
 import profileImg from '../images/profile.png';
 
-const roles = ['Frontend Developer', 'Full Stack Developer'];
+const roles = ['Frontend Developer', 'Full Stack Developer', 'Flutter Developer'];
 
 function useTypingAnimation(words: string[], typingSpeed = 100, deletingSpeed = 60, pauseDuration = 2000) {
   const [displayText, setDisplayText] = useState('');
@@ -105,30 +107,24 @@ export default function Hero() {
 
             {/* Description */}
             <p
-              className={`text-gray-500 dark:text-gray-400 text-base md:text-lg max-w-xl mb-10 leading-relaxed ${
+              className={`text-gray-500 dark:text-gray-400 text-base text-justify md:text-lg max-w-xl mb-10 leading-relaxed ${
                 isInView ? 'animate-fade-up' : 'opacity-0'
               }`}
               style={{ animationDelay: '0.45s' }}
             >
-              IT graduate and Full Stack Developer specializing in building scalable web applications
-              with React.js, Node.js, and modern technologies. Passionate about solving real-world
-              problems through clean, efficient code.
+              IT graduate and Full Stack Developer specializing in building scalable web applications with React.js, Node.js, and modern technologies, as well as mobile applications using Flutter.
+              Passionate about solving real-world problems through clean, efficient code.
             </p>
 
             {/* CTA Buttons */}
-            <div
-              className={`flex flex-col sm:flex-row items-center lg:items-start gap-4 ${
-                isInView ? 'animate-fade-up' : 'opacity-0'
-              }`}
-              style={{ animationDelay: '0.6s' }}
-            >
+            <div className="flex flex-col sm:flex-row items-center lg:items-start gap-4">
               <a href="#projects" onClick={(e) => { e.preventDefault(); document.querySelector('#projects')?.scrollIntoView({ behavior: 'smooth' }); }} className="btn-primary">
                 <ExternalLink className="w-4 h-4" />
-                View Projects
+                My Projects
               </a>
-              <a href="#contact" onClick={(e) => { e.preventDefault(); document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' }); }} className="btn-outline">
-                <Mail className="w-4 h-4" />
-                Contact Me
+              <a href="/cv/viraj-cv.pdf" target="_blank" rel="noopener noreferrer" className="btn-outline">
+                <ExternalLink className="w-4 h-4" />
+                View CV
               </a>
             </div>
 
@@ -159,6 +155,7 @@ export default function Hero() {
               {/* Decorative ring */}
               <div className="absolute -inset-3 rounded-full border-2 border-dashed border-primary-300/30 dark:border-primary-500/20 animate-[spin_20s_linear_infinite]" />
               
+
               {/* Image container */}
               <div className="relative w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-[340px] lg:h-[340px] rounded-full overflow-hidden border-4 border-white dark:border-slate-800 shadow-2xl shadow-primary-500/10">
                 <img
@@ -168,7 +165,8 @@ export default function Hero() {
                 />
               </div>
 
-              {/* Floating badge */}
+              {/* Floating badges */}
+              {/* Full Stack Developer badge (existing) */}
               <div className="absolute -bottom-2 -right-2 sm:bottom-2 sm:right-2 bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-700 rounded-2xl px-4 py-2 shadow-lg">
                 <div className="flex items-center gap-2">
                   <span className="text-lg">💻</span>
@@ -178,6 +176,30 @@ export default function Hero() {
                   </div>
                 </div>
               </div>
+
+              {/* Frontend Developer badge */}
+              <div className="absolute -top-2 -left-3 sm:-top-2 sm:-left-2 bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-700 rounded-2xl px-4 py-2 shadow-lg">
+                <div className="flex items-center gap-2">
+                  <FaReact className="text-blue-500 w-4 h-4" />
+                  <div>
+                    <p className="text-xs font-semibold text-gray-900 dark:text-white">Frontend</p>
+                    <p className="text-[10px] text-gray-500 dark:text-gray-400">Developer</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Flutter Developer badge */}
+              <div className="absolute top-1/3 -right-16 sm:top-1/3 sm:-right-14 bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-700 rounded-2xl px-4 py-2 shadow-lg">
+                <div className="flex items-center gap-2">
+                  <SiFlutter className="text-blue-400 w-4 h-4" />
+                  <div>
+                    <p className="text-xs font-semibold text-gray-900 dark:text-white">Flutter</p>
+                    <p className="text-[10px] text-gray-500 dark:text-gray-400">Developer</p>
+                  </div>
+                </div>
+              </div>
+
+              
             </div>
           </div>
 
