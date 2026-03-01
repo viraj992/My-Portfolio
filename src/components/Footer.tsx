@@ -26,10 +26,7 @@ export default function Footer() {
 
       <div className="section-container pt-16 pb-8">
         <div className="flex flex-col items-center gap-8">
-          {/* Logo */}
-          <a href="#home" onClick={(e) => { e.preventDefault(); scrollToTop(); }} className="font-display text-2xl font-bold gradient-text">
-            &lt;Dev /&gt;
-          </a>
+          
 
           {/* Quick nav */}
           <div className="flex flex-wrap items-center justify-center gap-6">
@@ -69,7 +66,7 @@ export default function Footer() {
 
           {/* Copyright */}
           <div className="flex flex-col sm:flex-row items-center gap-2 text-sm text-gray-500">
-            <span>© {new Date().getFullYear()} Full Stack Developer. All rights reserved.</span>
+            <span>© {new Date().getFullYear()} Viraj Ekanayake. All rights reserved.</span>
             
             
           </div>
