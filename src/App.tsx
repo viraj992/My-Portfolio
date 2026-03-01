@@ -8,6 +8,7 @@ import Projects from './components/Projects';
 import Experience from './components/Experience';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import Education from './components/Education';
 
 function App() {
   const isDark = useThemeStore((s) => s.isDark);
@@ -24,6 +25,7 @@ function App() {
       <Skills />
       <Projects />
       <Experience />
+      <Education/>
       <Contact />
       <Footer />
     </div>

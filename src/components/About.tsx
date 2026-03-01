@@ -8,7 +8,10 @@ export default function About() {
   return (
     <section id="about" className="section-padding bg-white dark:bg-slate-900/50">
       <div className="section-container">
-        <SectionHeading title="About Me" subtitle="Get to know me and my journey in software development" />
+        <SectionHeading 
+          title="About Me" 
+          subtitle="Get to know me and my journey in software development" 
+        />
 
         <div ref={ref} className="grid md:grid-cols-3 gap-6 lg:gap-8">
           {/* Background */}
@@ -24,11 +27,10 @@ export default function About() {
             <h3 className="font-display text-xl font-semibold text-gray-900 dark:text-white mb-3">
               Background
             </h3>
-            <p className="text-gray-500 dark:text-gray-400 leading-relaxed">
-              I am an IT graduate with a strong foundation in computer science principles. 
-              With hands-on experience in full stack development, I specialize in building 
-              end-to-end web applications using modern technologies like React.js, Node.js, 
-              and MySQL.
+            <p className="text-gray-500 dark:text-gray-400 leading-relaxed ">
+              I am an IT graduate with hands-on experience building responsive web and mobile applications. 
+              My expertise lies in React.js and Flutter, and I enjoy creating user-friendly interfaces 
+              with seamless functionality.
             </p>
           </div>
 
@@ -46,9 +48,7 @@ export default function About() {
               Skills Overview
             </h3>
             <p className="text-gray-500 dark:text-gray-400 leading-relaxed">
-              Proficient in React.js, JavaScript, PHP, Node.js, Express.js, and REST API 
-              development. Experienced with MySQL databases, version control with Git, and 
-              modern development tools like VS Code and Postman.
+              With hands-on experience in React.js, Flutter, JavaScript, Node.js, Express.js, and REST API development, I focus on writing clean, maintainable code and delivering high-quality user experiences
             </p>
           </div>
 
@@ -66,9 +66,9 @@ export default function About() {
               Career Objective
             </h3>
             <p className="text-gray-500 dark:text-gray-400 leading-relaxed">
-              Seeking a challenging role as a Full Stack Developer where I can leverage my 
-              technical skills to build innovative, scalable web solutions while continuing 
-              to grow and contribute to a dynamic development team.
+              I aim to contribute as a Frontend/Full Stack Developer, leveraging my skills in React.js and Flutter 
+              to build scalable, intuitive web and mobile applications. I thrive on solving problems and continuously 
+              improving my craft while creating meaningful digital products.
             </p>
           </div>
         </div>
