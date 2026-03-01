@@ -59,7 +59,7 @@ export default function Navbar() {
             }}
             className="font-display text-xl md:text-2xl font-bold gradient-text"
           >
-            &lt;Dev /&gt;
+            &lt;Viraj /&gt;
           </a>
 
           {/* Desktop Nav */}
