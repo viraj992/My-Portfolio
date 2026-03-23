@@ -3,6 +3,7 @@ import SectionHeading from './SectionHeading';
 import { useInView } from './useInView';
 import cosmeticsImg from '../images/cosmetics.png';
 import IconCoreImg from '../images/iconCore.png';
+import portfolioImg from '../images/portfolio.png'
 
 interface Project {
   title: string;
@@ -37,9 +38,9 @@ const projects: Project[] = [
     description:
       'A modern, responsive portfolio website showcasing projects, skills, and experience. Features dark/light mode, smooth animations, and a clean professional design.',
     tech: ['React.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
-    github: '#',
-    demo: '#',
-    image: '/images/portfolio-website.png',
+    github: 'https://github.com/viraj992/My-Portfolio.git',
+    demo: 'https://my-portfolio-k5vp.vercel.app/',
+    image: portfolioImg,
   },
 ];
 
