@@ -4,6 +4,7 @@ import { useInView } from './useInView';
 import cosmeticsImg from '../images/cosmetics.png';
 import IconCoreImg from '../images/iconCore.png';
 import portfolioImg from '../images/portfolio.png'
+import workoutsImg from '../images/workouts.png'
 
 interface Project {
   title: string;
@@ -41,6 +42,15 @@ const projects: Project[] = [
     github: 'https://github.com/viraj992/My-Portfolio.git',
     demo: 'https://my-portfolio-k5vp.vercel.app/',
     image: portfolioImg,
+  },
+  {
+    title: 'Workouts Tracking App',
+    description:
+      'A Flutter mobile application for tracking daily workouts, allowing users to add exercises, manage favorite workouts and equipment, and store data locally on the device.',
+    tech: ['Flutter', 'dart'],
+    github: 'https://github.com/viraj992/workouts-mobile-App.git',
+    demo: 'none',
+    image: workoutsImg,
   },
 ];
 
